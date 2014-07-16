@@ -5,6 +5,7 @@
 ## Bugs
 
 * Unable to link `tqsl`
+* Usage of C++ `std::shared_ptr` looks broken: related patches excluded
 
 ## Changes
 
