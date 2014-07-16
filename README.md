@@ -1,9 +1,10 @@
 # FreeBSD private port for TrustedQSL
 
-`comms/trustedqsl` 2.0.2
+Based on `comms/trustedqsl` 2.0.2
 
 ## Bugs
 
+* `tqsl` segfaults
 * Unable to link `tqsl`
 * Usage of C++ `std::shared_ptr` looks broken: related patches excluded
 
@@ -18,3 +19,10 @@
 
 * The CLI tools are built under `work/tqsl-2.0.2/src/`
 
+## Some personal thoughts
+
+* Checking duplicated in the tqsllib is superficial and not
+  necessary. It even makes the signing speed slower. Sticking to the
+  older version will be a better choice.
+
+* C++ code is *VERY* difficult to understand and maintain.
