@@ -2,6 +2,11 @@
 
 Based on `comms/trustedqsl` 2.0.2
 
+## Goals
+
+* To build the CLI tools under `src/` (formerly tqsllib)
+* To fix the bugs
+
 ## Bugs
 
 * `tqsl` segfaults
