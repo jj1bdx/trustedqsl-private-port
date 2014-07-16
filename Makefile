@@ -1,9 +1,11 @@
-# $FreeBSD: head/comms/trustedqsl/Makefile 358763 2014-06-22 03:43:19Z shurd $
+# $FreeBSD: head/comms/trustedqsl/Makefile 362112 2014-07-16 21:07:18Z shurd $
 
 PORTNAME=	trustedqsl
 PORTVERSION=	2.0.2
 CATEGORIES=	comms hamradio
-MASTER_SITES=	SF/${PORTNAME}/TrustedQSL/v${PORTVERSION}/
+#MASTER_SITES=	SF/${PORTNAME}/TrustedQSL/v${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	shurd
 DISTNAME=	tqsl-${PORTVERSION}
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -34,7 +36,6 @@ CMAKE_ARGS += \
     -DBUILD_STATIONLOC=ON \
 	-DTQSLLIB_STATIC=ON
 #
-USE_GCC= yes
 MAKE_JOBS_UNSAFE= yes
 
 post-patch:
