@@ -31,7 +31,7 @@
  
 +
  class XMLElement;
-+shared_ptr<XMLElement> make_shared_XMLElement(XMLElement *e);
++shared_ptr<XMLElement> make_shared_XMLElement(XMLElement e);
 +class XMLElementP {
 +	public:
 +		XMLElementP() {}
@@ -61,7 +61,7 @@
 -XMLElement::addElement(const XMLElement& element) {
 -	XMLElementList::iterator it = _elements.insert(make_pair(element.getElementName(), element));
 +XMLElement::addElement(XMLElement& element) {
-+	XMLElementList::iterator it = _elements.insert(make_pair(element.getElementName(), make_shared_XMLElement(&element)));
++	XMLElementList::iterator it = _elements.insert(make_pair(element.getElementName(), make_shared_XMLElement(element)));
  	return it;
  }
  

@@ -12,9 +12,9 @@
  
  namespace tqsllib {
  
-+shared_ptr<XMLElement> make_shared_XMLElement(XMLElement *e)
++shared_ptr<XMLElement> make_shared_XMLElement(XMLElement e)
 +{
-+	shared_ptr<XMLElement> p = make_shared<XMLElement>(*e);
++	shared_ptr<XMLElement> p = make_shared<XMLElement>(e);
 +	return p;
 +}
 +
