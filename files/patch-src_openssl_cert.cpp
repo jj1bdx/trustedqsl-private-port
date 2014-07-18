@@ -1,6 +1,6 @@
 --- src/openssl_cert.cpp.orig	2014-07-12 13:18:13.000000000 -0700
 +++ src/openssl_cert.cpp	2014-07-17 16:36:04.000000000 -0700
-@@ -4214,20 +4214,22 @@
+@@ -4214,28 +4214,28 @@
  	for (ep = ellist.find("Cert"); ep != ellist.end(); ep++) {
  		if (ep->first != "Cert")
  			break;
@@ -13,21 +13,25 @@
  	}
  
 -	XMLElement cs("Cert");
-+	shared_ptr<XMLElement> cs_p = make_shared<XMLElement>("Cert");
-+	XMLElement cs = *cs_p;
- 	cs.setPretext("\n  ");
+-	cs.setPretext("\n  ");
 -	XMLElement se;
-+	shared_ptr<XMLElement> se_p(new XMLElement);
-+	XMLElement se = *se_p;
- 	se.setPretext(cs.getPretext() + "  ");
- 	se.setElementName("status");
- 	se.setText(status);
+-	se.setPretext(cs.getPretext() + "  ");
+-	se.setElementName("status");
+-	se.setText(status);
 -	cs.addElement(se);
-+	cs.addElement(se_p);
++	shared_ptr<XMLElement> cs_p = make_shared<XMLElement>("Cert");
++	cs_p->setPretext("\n  ");
++	shared_ptr<XMLElement> se_p(new XMLElement);
++	se_p->setPretext(cs_p->getPretext() + "  ");
++	se_p->setElementName("status");
++	se_p->setText(status);
++	cs_p->addElement(se_p);
  
- 	cs.setAttribute("serial", sstr);
- 	cs.setText("\n  ");
-@@ -4235,7 +4237,7 @@
+-	cs.setAttribute("serial", sstr);
+-	cs.setText("\n  ");
++	cs_p->setAttribute("serial", sstr);
++	cs_p->setText("\n  ");
+ 
  	if (exists)
  		ellist.erase(ep);
  
