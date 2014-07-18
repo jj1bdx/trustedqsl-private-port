@@ -2,6 +2,11 @@
 
 Based on `comms/trustedqsl` 2.0.2
 
+## Status
+
+17-JUL-2014: Reverted back to clang, re-incorporated shurd's patches on
+XMLElement. So far the CLI tools seems to be running, but the GUI doesn't.
+
 ## Goals
 
 * To build the CLI tools under `src/` (formerly tqsllib)
@@ -9,16 +14,12 @@ Based on `comms/trustedqsl` 2.0.2
 
 ## Bugs
 
-* `tqsl` segfaults
-* Unable to link `tqsl`
-* Usage of C++ `std::shared_ptr` looks broken: related patches excluded
+* `tqsl` doesn't run after the updating message
 
 ## Changes
 
-* Enable `USE_GCC`
 * Enable Cmake compilation options for building CLI tools under `src`
 * Original patches included under `files/`
-* Patches excludes are under `files/NOT-APPLIED`
 
 ## CLI tools
 
