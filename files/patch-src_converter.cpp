@@ -1,5 +1,5 @@
---- src/converter.cpp.FCS	2014-07-16 12:16:17.000000000 +0900
-+++ src/converter.cpp	2014-07-16 12:16:40.000000000 +0900
+--- src/converter.cpp.orig	2014-07-17 03:34:36.000000000 -0700
++++ src/converter.cpp	2014-07-17 03:36:07.000000000 -0700
 @@ -88,7 +88,7 @@
  		optind++;
  		const char *ofile = (optind < argc) ? argv[optind] : "converted.tq7";
