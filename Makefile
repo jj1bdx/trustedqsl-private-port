@@ -1,8 +1,7 @@
-# $FreeBSD: head/comms/trustedqsl/Makefile 362112 2014-07-16 21:07:18Z shurd $
+# $FreeBSD: head/comms/trustedqsl/Makefile 362230 2014-07-18 21:42:32Z shurd $
 
 PORTNAME=	trustedqsl
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.0.3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/TrustedQSL/v${PORTVERSION}/
 DISTNAME=	tqsl-${PORTVERSION}
@@ -21,8 +20,7 @@ LIB_DEPENDS=	libdb-5.so:${PORTSDIR}/databases/db5 \
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USES=		cmake compiler:features pkgconfig
-CMAKE_ARGS=	-DBDB_PREFIX=${LOCALBASE} \
-			-DCMAKE_BUILD_TYPE=Debug
+CMAKE_ARGS=	-DBDB_PREFIX=${LOCALBASE}
 USE_WX=		2.8+
 WX_UNICODE=	yes
 USE_LDCONFIG=	yes
