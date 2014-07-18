@@ -21,7 +21,8 @@ LIB_DEPENDS=	libdb-5.so:${PORTSDIR}/databases/db5 \
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USES=		cmake compiler:features pkgconfig
-CMAKE_ARGS=	-DBDB_PREFIX=${LOCALBASE}
+CMAKE_ARGS=	-DBDB_PREFIX=${LOCALBASE} \
+			-DCMAKE_BUILD_TYPE=Debug
 USE_WX=		2.8+
 WX_UNICODE=	yes
 USE_LDCONFIG=	yes
