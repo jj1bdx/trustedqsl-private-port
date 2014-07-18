@@ -1,8 +1,10 @@
 # FreeBSD private port for TrustedQSL
 
-Based on `comms/trustedqsl` 2.0.2
+Based on `comms/trustedqsl` 2.0.3
 
 ## Status
+
+19-JUL-2014: 2.0.3 merged as port r362230.
 
 18-JUL-2014: More fix from shurd. GUI fixed by enforcing `shared_ptr` use
 on `tqsl_setCertificateStatus()` in `openssl_cert.cpp`
@@ -19,15 +21,6 @@ XMLElement. So far the CLI tools seems to be running, but the GUI doesn't.
 ## Bugs
 
 * SOLVED: `tqsl` doesn't run after the updating message
-
-## Changes
-
-* Enable Cmake compilation options for building CLI tools under `src`
-* Original patches included under `files/`
-
-## CLI tools
-
-* The CLI tools are built under `work/tqsl-2.0.2/src/`
 
 ## Some personal thoughts
 
