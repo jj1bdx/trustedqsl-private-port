@@ -4,6 +4,9 @@ Based on `comms/trustedqsl` 2.0.2
 
 ## Status
 
+18-JUL-2014: More fix from shurd. GUI fixed by enforcing `shared_ptr` use
+on `tqsl_setCertificateStatus()` in `openssl_cert.cpp`.
+
 17-JUL-2014: Reverted back to clang, re-incorporated shurd's patches on
 XMLElement. So far the CLI tools seems to be running, but the GUI doesn't.
 
@@ -14,7 +17,7 @@ XMLElement. So far the CLI tools seems to be running, but the GUI doesn't.
 
 ## Bugs
 
-* `tqsl` doesn't run after the updating message
+* SOLVED: `tqsl` doesn't run after the updating message
 
 ## Changes
 
