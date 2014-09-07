@@ -1,7 +1,8 @@
-# $FreeBSD: head/comms/trustedqsl/Makefile 362230 2014-07-18 21:42:32Z shurd $
+# $FreeBSD: head/comms/trustedqsl/Makefile 365611 2014-08-22 06:56:48Z mandree $
 
 PORTNAME=	trustedqsl
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/TrustedQSL/v${PORTVERSION}/
 DISTNAME=	tqsl-${PORTVERSION}
@@ -14,8 +15,9 @@ LICENSE_NAME=	American Radio Relay League, Inc. All rights reserved.
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-LIB_DEPENDS=	libdb-5.so:${PORTSDIR}/databases/db5 \
-		libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+
+USE_BDB=	5+
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
