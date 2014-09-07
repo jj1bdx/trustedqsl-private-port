@@ -4,6 +4,8 @@ Based on `comms/trustedqsl` 2.0.3
 
 ## Status
 
+7-SEP-2014: 2.0.3\_1 merged as port r365611.
+
 19-JUL-2014: 2.0.3 merged as port r362230.
 
 18-JUL-2014: More fix from shurd. GUI fixed by enforcing `shared_ptr` use
